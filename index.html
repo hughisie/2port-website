@@ -39,10 +39,10 @@
       </div>
     </section>
 
-    <!-- Contact Form with Honeypot and reCAPTCHA -->
+    <!-- Contact Form with Formspree -->
     <section id="contact">
       <h3>Interested in 2port.com? Contact Us</h3>
-      <form id="contact-form" method="POST" action="contact.php">
+      <form id="contact-form" method="POST" action="https://formspree.io/f/manyonov">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
 
@@ -56,7 +56,7 @@
         <input type="text" name="honeypot" id="honeypot" style="display:none;">
 
         <!-- Google reCAPTCHA -->
-        <div class="g-recaptcha" data-sitekey="6LdZcXUqAAAAAKKUpc9-waJFPs1ckp9rzP9yVPFN" data-action="LOGIN"></div>
+        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
 
         <button type="submit">Submit</button>
       </form>
