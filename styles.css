@@ -6,15 +6,9 @@ body {
   background-color: #f8f9fa;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 .main-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 .main-header h1 {
@@ -29,7 +23,6 @@ body {
 }
 
 .cta-button {
-  display: inline-block;
   background-color: #007bff;
   color: white;
   padding: 10px 20px;
@@ -37,17 +30,18 @@ body {
   text-decoration: none;
   font-weight: bold;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .content-section {
-  margin-top: 30px;
+  margin: 30px;
 }
 
 .content-section h2 {
   font-size: 2em;
   font-weight: bold;
-  margin-bottom: 10px;
   color: #333;
+  margin-bottom: 20px;
 }
 
 .intro-text {
@@ -60,7 +54,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  margin-bottom: 30px;
 }
 
 .destination h3 {
@@ -83,19 +76,14 @@ body {
 
 .tips-list li {
   margin: 10px 0;
-  font-size: 1em;
-}
-
-.tips-list strong {
-  color: #007bff;
 }
 
 .contact-section {
-  margin-top: 40px;
+  margin: 40px;
   text-align: center;
 }
 
-.contact-section h3 {
+.contact-section h2 {
   font-size: 1.6em;
   font-weight: bold;
 }
@@ -116,13 +104,8 @@ body {
   border-radius: 5px;
 }
 
-.contact-section textarea {
-  height: 100px;
-}
-
 .contact-section .cta-button {
   margin-top: 15px;
-  font-size: 1em;
 }
 
 footer {
@@ -131,9 +114,4 @@ footer {
   font-size: 0.9em;
   color: #666;
   margin-top: 20px;
-}
-
-.ad {
-  margin-top: 30px;
-  text-align: center;
 }
