@@ -6,11 +6,10 @@
   <title>2port.com - Explore Cruises and Available Domain for Sale</title>
   <meta name="description" content="Discover the best cruise destinations and tips. Contact us if you're interested in acquiring this valuable domain.">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3690215112189621" crossorigin="anonymous"></script>
   <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
 </head>
-<body style="font-family: 'Roboto', sans-serif;">
+<body>
   <div class="container">
     <header class="main-header">
       <h1>2port.com - This Domain is Available for Sale</h1>
@@ -21,7 +20,7 @@
     <!-- Blog Content Section -->
     <section class="content-section">
       <h2>Discover the Best Cruise Destinations and Travel Tips</h2>
-      <p>Looking for an unforgettable travel experience? Cruises offer a luxurious way to explore the world. Dive into our guide on top cruise destinations and essential travel tips to enhance your journey.</p>
+      <p class="intro-text">Looking for an unforgettable travel experience? Cruises offer a luxurious way to explore the world. Dive into our guide on top cruise destinations and essential travel tips to enhance your journey.</p>
       
       <div class="destination-grid">
         <div class="destination">
@@ -66,21 +65,21 @@
     <section id="contact" class="contact-section">
       <h3>Interested in 2port.com? Contact Us</h3>
       <form id="contact-form" method="POST" action="https://formspree.io/f/manyonov">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <div class="form-group recaptcha-container">
-          <div class="g-recaptcha" data-sitekey="6LdZcXUqAAAAAKKUpc9-waJFPs1ckp9rzP9yVPFN"></div>
-        </div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <!-- Honeypot Field (invisible to users) -->
+        <input type="text" name="honeypot" id="honeypot" style="display:none;">
+
+        <!-- Google reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6LdZcXUqAAAAAKKUpc9-waJFPs1ckp9rzP9yVPFN"></div>
+
         <button type="submit" class="cta-button">Submit</button>
       </form>
     </section>
