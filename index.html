@@ -21,6 +21,19 @@
 
     <!-- reCAPTCHA v2 Checkbox -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- Form Submission and reCAPTCHA Handler -->
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6LeqAHgqAAAAABViHIbp2vGiH15HQHdbIqZ0yxl1', {action: 'submit'}).then(function(token) {
+                    document.getElementById("g-recaptcha-response").value = token;
+                    document.getElementById("inquiry-form").submit();
+                });
+            });
+        }
+    </script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -102,12 +115,12 @@
             <h2>Inquire About This Domain</h2>
             <p>If you're interested in purchasing this domain, please fill out the form below, and we'll get back to you as soon as possible.</p>
             <form action="https://formspree.io/f/manyonov" method="POST" id="inquiry-form" onsubmit="submitForm(event)">
+                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
                 <label for="email">Your Email:</label><br>
                 <input type="email" id="email" name="email" required><br><br>
                 <label for="message">Your Message:</label><br>
                 <textarea name="message" rows="4" required></textarea><br><br>
-                
-                <!-- reCAPTCHA Checkbox -->
+                 <!-- reCAPTCHA Checkbox -->
                 <div class="g-recaptcha" data-sitekey="6LeqAHgqAAAAABViHIbp2vGiH15HQHdbIqZ0yxl1"></div>
                 <br>
 
@@ -118,4 +131,34 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Ultimate Travel Guide | <a href="privacy-policy.html">Privacy Policy</a> | <a href="about.html">About Us</a> | <a href="index
+        <p>&copy; 2024 Ultimate Travel Guide | <a href="privacy-policy.html">Privacy Policy</a> | <a href="about.html">About Us</a> | <a href="index.html">Home</a></p>
+    </footer>
+
+    <!-- Form Success Handling Script -->
+    <script>
+        document.getElementById('inquiry-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById("success-message").style.display = "block"; // Show success message
+                    form.reset(); // Clear the form
+                } else {
+                    alert("There was an issue with your submission. Please try again.");
+                }
+            }).catch(error => {
+                alert("There was an error with the form submission.");
+            });
+        });
+    </script>
+</body>
+</html>
