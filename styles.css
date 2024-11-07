@@ -23,37 +23,46 @@ p, li {
   line-height: 1.8;
 }
 
-/* Header */
-.main-header {
-  text-align: center;
-  background: linear-gradient(90deg, #1f3a93, #3b5998);
-  color: white;
-  padding: 60px 0;
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  padding: 15px;
 }
 
-.main-header h1 {
-  font-size: 2.8em;
-  font-weight: bold;
-}
-
-.main-header p {
-  font-size: 1.3em;
-  color: #f3f3f3;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #ff7f50;
-  color: #fff;
-  padding: 15px 30px;
-  border-radius: 50px;
+.nav-link {
+  color: #f3f4f6;
   text-decoration: none;
+  margin: 0 15px;
   font-weight: bold;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-.cta-button:hover {
+.nav-link:hover {
+  color: #ff7f50;
+}
+
+/* Smaller Sale Banner */
+.sale-banner {
+  text-align: center;
   background-color: #ff6347;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.sale-banner a {
+  color: #f3f4f6;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.sale-banner a:hover {
+  color: #ffddc1;
 }
 
 /* Content Section */
@@ -121,3 +130,32 @@ p, li {
   font-size: 1.8em;
   color: #3b5998;
   text-align: center;
+}
+
+/* Contact Section */
+.contact-section {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h2 {
+  font-size: 2em;
+  color: #ff7f50;
+  text-align: center;
+}
+
+.contact-section label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea {
+  width: calc(100% - 22px);
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #bd
