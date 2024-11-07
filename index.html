@@ -12,7 +12,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-HX8RRZQHVN');
     </script>
 
@@ -20,19 +19,10 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3690215112189621"
          crossorigin="anonymous"></script>
 
-    <!-- reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeqAHgqAAAAABViHIbp2vGiH15HQHdbIqZ0yxl1"></script>
-    <script>
-        function setRecaptchaToken() {
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LeqAHgqAAAAABViHIbp2vGiH15HQHdbIqZ0yxl1', {action: 'submit'}).then(function(token) {
-                    document.getElementById('g-recaptcha-response').value = token;
-                });
-            });
-        }
-    </script>
+    <!-- reCAPTCHA v2 Checkbox -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
-<body onload="setRecaptchaToken()">
+<body>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="index.html" class="nav-link">Home</a>
@@ -117,8 +107,17 @@
                 <label for="message">Your Message:</label><br>
                 <textarea name="message" rows="4" required></textarea><br><br>
                 
-                <!-- reCAPTCHA Token Field -->
-                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                <!-- reCAPTCHA Checkbox -->
+                <div class="g-recaptcha" data-sitekey="6LeqAHgqAAAAABViHIbp2vGiH15HQHdbIqZ0yxl1"></div>
+                <br>
 
                 <button type="submit" class="cta-button">Send Inquiry</button>
             </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ultimate Travel Guide | <a href="privacy-policy.html">Privacy Policy</a> | <a href="about.html">About Us</a> | <a href="index.html">Home</a></p>
+    </footer>
+</body>
+</html>
