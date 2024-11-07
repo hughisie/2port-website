@@ -101,7 +101,7 @@
         <section class="contact-section" id="inquiry-form">
             <h2>Inquire About This Domain</h2>
             <p>If you're interested in purchasing this domain, please fill out the form below, and we'll get back to you as soon as possible.</p>
-            <form action="https://formspree.io/f/manyonov" method="POST" id="inquiry-form">
+            <form action="https://formspree.io/f/manyonov" method="POST" id="inquiry-form" onsubmit="submitForm(event)">
                 <label for="email">Your Email:</label><br>
                 <input type="email" id="email" name="email" required><br><br>
                 <label for="message">Your Message:</label><br>
@@ -113,11 +113,9 @@
 
                 <button type="submit" class="cta-button">Send Inquiry</button>
             </form>
+            <p id="success-message" style="display:none; color: green; font-weight: bold;">Thank you! Your message has been sent successfully.</p>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 Ultimate Travel Guide | <a href="privacy-policy.html">Privacy Policy</a> | <a href="about.html">About Us</a> | <a href="index.html">Home</a></p>
-    </footer>
-</body>
-</html>
+        <p>&copy; 2024 Ultimate Travel Guide | <a href="privacy-policy.html">Privacy Policy</a> | <a href="about.html">About Us</a> | <a href="index
