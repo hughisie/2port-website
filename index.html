@@ -21,7 +21,7 @@
          crossorigin="anonymous"></script>
 
     <!-- reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeqAHgqAAAAABViHIbp2vGiH15HQHdbIqZ0yxl1"></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render="6LeqAHgqAAAAABViHIbp2vGiH15HQHdbIqZ0yxl1"></script>
     <script>
         function onSubmit(token) {
             document.getElementById("inquiry-form").submit();
@@ -108,11 +108,19 @@
             <h2>Inquire About This Domain</h2>
             <p>If you're interested in purchasing this domain, please fill out the form below, and we'll get back to you as soon as possible.</p>
             <form action="https://formspree.io/f/manyonov" method="POST" id="inquiry-form">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-                <label for="email">Email:</label><br>
+                <label for="email">Your Email:</label><br>
                 <input type="email" id="email" name="email" required><br><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                <label for="message">Your Message:</label><br>
+                <textarea name="message" rows="4" required></textarea><br><br>
                 <button class="g-recaptcha cta-button" 
-                        data-sitekey="6LeqAHgqAAAAABViHIbp2vGiH
+                        data-sitekey="6LeqAHgqAAAAABViHIbp2vGiH15HQHdbIqZ0yxl1" 
+                        data-callback='onSubmit' 
+                        data-action='submit'>
+                    Send Inquiry
+                </button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ultimate Travel Guide | <a
