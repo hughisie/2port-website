@@ -19,19 +19,11 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3690215112189621"
          crossorigin="anonymous"></script>
 
-    <!-- reCAPTCHA v2 Checkbox -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-    <!-- Form Submission and reCAPTCHA Handler -->
+    <!-- reCAPTCHA Enterprise -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfhQaMoAAAAANSV4Ke0SvEpmMhh_mCb3vN02w8p"></script>
     <script>
-        function submitForm(event) {
-            event.preventDefault();
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LeqAHgqAAAAABViHIbp2vGiH15HQHdbIqZ0yxl1', {action: 'submit'}).then(function(token) {
-                    document.getElementById("g-recaptcha-response").value = token;
-                    document.getElementById("inquiry-form").submit();
-                });
-            });
+        function onSubmit(token) {
+            document.getElementById("inquiry-form").submit();
         }
     </script>
 </head>
@@ -114,51 +106,46 @@
         <section class="contact-section" id="inquiry-form">
             <h2>Inquire About This Domain</h2>
             <p>If you're interested in purchasing this domain, please fill out the form below, and we'll get back to you as soon as possible.</p>
-            <form action="https://formspree.io/f/manyonov" method="POST" id="inquiry-form" onsubmit="submitForm(event)">
-                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+            <form action="https://formspree.io/f/manyonov" method="POST" id="inquiry-form">
                 <label for="email">Your Email:</label><br>
                 <input type="email" id="email" name="email" required><br><br>
                 <label for="message">Your Message:</label><br>
                 <textarea name="message" rows="4" required></textarea><br><br>
-                 <!-- reCAPTCHA Checkbox -->
-                <div class="g-recaptcha" data-sitekey="6LeqAHgqAAAAABViHIbp2vGiH15HQHdbIqZ0yxl1"></div>
-                <br>
+                
+                <!-- reCAPTCHA v3 Button -->
+ <button
+    class="g-recaptcha cta-button"
+    data-sitekey="6LfhQaMoAAAAANSV4Ke0SvEpmMhh_mCb3vN02w8p"
+    data-callback="onSubmit"
+    data-action="submit">
+    Send Inquiry
+</button>
+</form>
+<p id="success-message" style="display:none; color: green; font-weight: bold;">Thank you! Your message has been sent successfully.</p>
+</section>
+</div>
 
-                <button type="submit" class="cta-button">Send Inquiry</button>
-            </form>
-            <p id="success-message" style="display:none; color: green; font-weight: bold;">Thank you! Your message has been sent successfully.</p>
-        </section>
-    </div>
+<footer>
+    <p>&copy; 2024 Ultimate Travel Guide | <a href="privacy-policy.html">Privacy Policy</a> | <a href="about.html">About Us</a> | <a href="index.html">Home</a></p>
+</footer>
 
-    <footer>
-        <p>&copy; 2024 Ultimate Travel Guide | <a href="privacy-policy.html">Privacy Policy</a> | <a href="about.html">About Us</a> | <a href="index.html">Home</a></p>
-    </footer>
-
-    <!-- Form Success Handling Script -->
-    <script>
-        document.getElementById('inquiry-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            const form = event.target;
-            const formData = new FormData(form);
-
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    document.getElementById("success-message").style.display = "block"; // Show success message
-                    form.reset(); // Clear the form
-                } else {
-                    alert("There was an issue with your submission. Please try again.");
-                }
-            }).catch(error => {
-                alert("There was an error with the form submission.");
-            });
+<!-- reCAPTCHA v3 JavaScript API -->
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LfhQaMoAAAAANSV4Ke0SvEpmMhh_mCb3vN02w8p"></script>
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LfhQaMoAAAAANSV4Ke0SvEpmMhh_mCb3vN02w8p', {action: 'submit'}).then(function(token) {
+            var form = document.getElementById("inquiry-form");
+            var hiddenRecaptchaInput = document.createElement("input");
+            hiddenRecaptchaInput.setAttribute("type", "hidden");
+            hiddenRecaptchaInput.setAttribute("name", "g-recaptcha-response");
+            hiddenRecaptchaInput.setAttribute("value", token);
+            form.appendChild(hiddenRecaptchaInput);
         });
-    </script>
+    });
+
+    function onSubmit(token) {
+        document.getElementById("inquiry-form").submit();
+    }
+</script>
 </body>
 </html>
