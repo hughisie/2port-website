@@ -6,6 +6,16 @@
     <title>Privacy Policy - 2port.com</title>
     <link rel="stylesheet" href="styles.css">
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HX8RRZQHVN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-HX8RRZQHVN');
+    </script>
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3690215112189621"
          crossorigin="anonymous"></script>
@@ -14,16 +24,21 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="blog1.html" class="nav-link">Blog</a>
+        <a href="blog.html" class="nav-link">Blog</a>
         <a href="about.html" class="nav-link">About Us</a>
         <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
     </nav>
 
-    <header class="main-header">
-        <h1>Privacy Policy</h1>
+    <!-- Smaller Domain Sale Banner -->
+    <header class="sale-banner">
+        <p>This domain is available for sale. <a href="#inquiry-form" class="cta-link">Inquire here</a></p>
     </header>
 
     <div class="container">
+        <header class="main-header">
+            <h1>Privacy Policy</h1>
+        </header>
+
         <section class="content-section">
             <h2>Our Commitment to Your Privacy</h2>
             <p>Your privacy is very important to us at 2port.com. This Privacy Policy outlines the types of information we collect, how we use it, and the steps we take to safeguard your personal information.</p>
@@ -51,6 +66,21 @@
             <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, so please review it periodically.</p>
 
             <p>If you have any questions or concerns about this Privacy Policy, please <a href="index.html#inquiry-form">contact us</a>.</p>
+        </section>
+
+        <!-- Contact Section for Domain Sale Inquiry -->
+        <section class="contact-section" id="inquiry-form">
+            <h2>Inquire About This Domain</h2>
+            <p>If you're interested in purchasing this domain, please fill out the form below, and we'll get back to you as soon as possible.</p>
+            <form action="submit_inquiry.php" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                <input type="submit" value="Submit Inquiry" class="cta-button">
+            </form>
         </section>
     </div>
 
