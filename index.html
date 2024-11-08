@@ -102,50 +102,41 @@
             <p>A smooth cruise experience starts with careful planning and a bit of insider knowledge. From choosing the right port and packing wisely to staying healthy and maximizing each port stop, these essential tips ensure a seamless journey from start to finish. Prepare to relax, explore, and enjoy the wonders of cruising!</p>
         </section>
 
-        <!-- Contact Section for Domain Sale Inquiry -->
+<!-- Contact Section for Domain Sale Inquiry -->
         <section class="contact-section" id="inquiry-form">
             <h2>Inquire About This Domain</h2>
             <p>If you're interested in purchasing this domain, please fill out the form below, and we'll get back to you as soon as possible.</p>
-            <form action="https://formspree.io/f/manyonov" method="POST" id="inquiry-form">
+            <form action="https://formspree.io/f/manyonov" method="POST">
                 <label for="email">Your Email:</label><br>
                 <input type="email" id="email" name="email" required><br><br>
                 <label for="message">Your Message:</label><br>
                 <textarea name="message" rows="4" required></textarea><br><br>
                 
-                <!-- reCAPTCHA v3 Button -->
- <button
-    class="g-recaptcha cta-button"
-    data-sitekey="6LfhQaMoAAAAANSV4Ke0SvEpmMhh_mCb3vN02w8p"
-    data-callback="onSubmit"
-    data-action="submit">
-    Send Inquiry
-</button>
-</form>
-<p id="success-message" style="display:none; color: green; font-weight: bold;">Thank you! Your message has been sent successfully.</p>
-</section>
-</div>
+                <!-- reCAPTCHA v2 no-JS version -->
+                <div class="g-recaptcha" data-sitekey="6LfhQaMoAAAAANSV4Ke0SvEpmMhh_mCb3vN02w8p">
+                    <div style="width: 302px; height: 74px; position: relative;">
+                        <div style="width: 302px; height: 74px; position: absolute;">
+                            <iframe src="https://www.google.com/recaptcha/api/fallback?k=6LfhQaMoAAAAANSV4Ke0SvEpmMhh_mCb3vN02w8p" 
+                                    frameborder="0" scrolling="no" 
+                                    style="width: 302px; height:74px; border-style: none;"></iframe>
+                        </div>
+                        <div style="width: 300px; height: 60px; border-style: none; bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px; background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                            <textarea id="g-recaptcha-response" name="g-recaptcha-response" 
+                                      class="g-recaptcha-response" 
+                                      style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;" 
+                                      value=""></textarea>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <input type="submit" value="Send Inquiry">
+            </form>
+            <p id="success-message" style="display:none; color: green; font-weight: bold;">Thank you! Your message has been sent successfully.</p>
+        </section>
+    </div>
 
-<footer>
-    <p>&copy; 2024 Ultimate Travel Guide | <a href="privacy-policy.html">Privacy Policy</a> | <a href="about.html">About Us</a> | <a href="index.html">Home</a></p>
-</footer>
-
-<!-- reCAPTCHA v3 JavaScript API -->
-<script src="https://www.google.com/recaptcha/enterprise.js?render=6LfhQaMoAAAAANSV4Ke0SvEpmMhh_mCb3vN02w8p"></script>
-<script>
-    grecaptcha.ready(function() {
-        grecaptcha.execute('6LfhQaMoAAAAANSV4Ke0SvEpmMhh_mCb3vN02w8p', {action: 'submit'}).then(function(token) {
-            var form = document.getElementById("inquiry-form");
-            var hiddenRecaptchaInput = document.createElement("input");
-            hiddenRecaptchaInput.setAttribute("type", "hidden");
-            hiddenRecaptchaInput.setAttribute("name", "g-recaptcha-response");
-            hiddenRecaptchaInput.setAttribute("value", token);
-            form.appendChild(hiddenRecaptchaInput);
-        });
-    });
-
-    function onSubmit(token) {
-        document.getElementById("inquiry-form").submit();
-    }
-</script>
+    <footer>
+        <p>&copy; 2024 Ultimate Travel Guide | <a href="privacy-policy.html">Privacy Policy</a> | <a href="about.html">About Us</a> | <a href="index.html">Home</a></p>
+    </footer>
 </body>
 </html>
